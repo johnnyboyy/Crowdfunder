@@ -3,9 +3,12 @@ class User < ActiveRecord::Base
   					 :username, :email, :password,
   					 :password_confirmation
 
+
+  has_many :projects
+  has_many :pledges
+
   authenticates_with_sorcery!
 
   validates :first_name, :last_name, presence: true
 
-  has_many :projects
 end

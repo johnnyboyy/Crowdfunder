@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
-  belongs_to :user
   attr_accessible :description, :goal, :teaser, :title, :user_id
+  belongs_to :user
+  has_many :pledges
 
   validates :title, presence: true, length: {maximum: 100}
   validates :teaser, presence: true, length: {maximum: 255}
