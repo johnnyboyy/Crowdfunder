@@ -1,0 +1,9 @@
+
+<p>Listing projects</p>
+
+<ul>
+	<% @projects.each do |pp| %>
+		<li>
+			<h5><%= pp.title %></h5>
+		</li>
+	<% end %>
