@@ -4,6 +4,7 @@ Crowdfunder::Application.routes.draw do
 
   resources :projects, only: [:index, :show]
   resources :users, only: [:show, :new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'welcome#index'
   
