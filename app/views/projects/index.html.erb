@@ -4,6 +4,6 @@
 <ul>
 	<% @projects.each do |pp| %>
 		<li>
-			<h5><%= pp.title %></h5>
+			<h5><%=link_to pp.title, pp %></h5>
 		</li>
 	<% end %>
