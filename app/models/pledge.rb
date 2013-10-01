@@ -3,4 +3,6 @@ class Pledge < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :project
+
+  validates :amount, :project, :user_id, presence: true
 end
