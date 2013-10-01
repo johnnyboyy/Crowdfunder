@@ -48,7 +48,8 @@ describe "User Authentication" do
       expect(page).to have_no_content("Account created")
 
       within(:css, ".alert") do
-      have_content("Try again")
+        have_content("Try again")
+      end
     end
   end
 end
