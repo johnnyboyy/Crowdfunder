@@ -1,1 +1,12 @@
 <h1><%= @project.title %></h1>
+<%= link_to 'Back This Project', new_project_pledge_path(@project) %>
+
+
+<h2>Pledges</h2>
+<% @project.pledges.each do |pledge| %>
+
+	<p><strong><%=pledge.user.username %></strong></p>
+	<p>Pledged: <%= pledge.amount %></p>
+
+
+	<% end %>

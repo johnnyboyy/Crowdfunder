@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20131001205854) do
 
   create_table "pledges", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "project"
+    t.integer  "project_id"
     t.integer  "amount"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
