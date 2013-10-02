@@ -8,7 +8,10 @@ Crowdfunder::Application.routes.draw do
   resources :users, only: [:show, :new, :create, :destroy]
 
   namespace :my do 
-    resources :projects # => My::ProjectsController
+    resources :projects do # => My::ProjectsController
+      resources :images
+    end
+    resources :images
   end
 
   resources :sessions, only: [:new, :create, :destroy]
