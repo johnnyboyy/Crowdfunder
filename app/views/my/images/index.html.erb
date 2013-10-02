@@ -1,7 +1,7 @@
 <%= form_for [:my, @project, @image] do |f| %>
 
   <div class="field">
-    <%=f.label :file %>
+    <%=f.label :file, "Choose and Image" %>
     <%=f.file_field :file %>
   </div>
 
