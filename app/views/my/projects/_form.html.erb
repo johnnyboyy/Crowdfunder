@@ -1,20 +1,28 @@
-<%= form_for [:my, @project] do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="container">
+  <form class="fuck_bootstrap">
+    <h2 class="form-signin-heading">New Project</h2>
 
-  <%= f.label :teaser %>
-  <%= f.text_field :teaser %>
+    <%= form_for [:my, @project], class: "form-signin" do |f| %>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
 
-  <%= f.label :goal %>
-  <%= f.number_field :goal %>
+      <%= f.label :teaser %>
+      <%= f.text_field :teaser, class: "form-control" %>
 
-  <% if current_page? new_my_project_path %>
-    <%= f.submit "Publish Project" %>
-  <% else %>
-    <%= f.submit %>
-  <% end %> 
-<% end %>
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control", rows: 8 %>
+
+      <%= f.label :goal %>
+      <%= f.number_field :goal, class: "form-control" %>
+
+      <% if controller.action_name == 'new' %>
+        <%= f.submit "Publish Project", class: "btn btn-lg btn-primary btn-block" %>
+      <% else %>
+        <%= f.submit "Update Project", class: "btn btn-lg btn-primary btn-block" %> 
+      <% end %>
+    <% end %>
+</div> <!-- /container -->
+
+

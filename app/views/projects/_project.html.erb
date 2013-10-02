@@ -1,7 +1,16 @@
-<li class="project">
-  <%= link_to project.title, project %>
-  <br />
+
+<div class="thumbnail">
+  <img data-src="#">
+  <li class="project span4">
+ 	 	<div class="caption">
+		  <%= link_to project.title, project %>
+		  <br />
+		  <p>
+		    <%= project.teaser %>
+		  </p>
+		</div>
+	</li>
   <p>
-    <%= project.teaser %>
-  </p>
-</li>
+  	<%= link_to "More Info", project, class: "btn btn-primary" %>
+  	<%= link_to "Back This!", new_project_pledge_path(project), class: "btn btn-default" %></p>
+ </div>

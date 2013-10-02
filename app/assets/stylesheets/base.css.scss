@@ -1,7 +1,51 @@
 
 
-body {
-	padding-top: 40px;
-}
 
 @import "bootstrap";
+
+body {
+	padding-top: 40px;
+
+	ul.project_list {
+		list-style: none;
+
+		div.thumbnail {
+			height: 280px;
+			width: 200px;
+			float: left;
+			margin: 5px;
+		}
+
+		li.project {
+			float: left;
+			width: 300px;
+
+			* {
+				margin: 10px 20px;
+				padding: 5px;
+				margin: 5px;
+			}
+
+		}
+	}
+
+	.container {
+		min-width: 580px;
+		margin: 0 auto;
+
+		form.fuck_bootstrap {
+			max-width: 400px;
+			margin: 0 auto;
+
+			textarea {
+				width: 380px;
+				margin: 5px 10px;
+			}
+
+			input {
+				width: 380px;
+				margin: 5px 10px;
+			}
+		}
+	}
+}

@@ -1,11 +1,15 @@
 
 <p>Listing projects</p>
 
-<ul>
-	<% @projects.each do |pp| %>
 
-		<%= render 'project', project: pp %>
 
-	<% end %>
+<div class="row">
+
+		<ul class="project_list">
+			<% @projects.each do |pp| %>
+				<%= render 'project', project: pp %>
+			<% end %>
+		</ul>
+</div>
 
 <%= paginate @projects %>
