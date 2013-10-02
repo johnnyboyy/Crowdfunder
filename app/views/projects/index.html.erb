@@ -3,8 +3,9 @@
 
 <ul>
 	<% @projects.each do |pp| %>
-		<li>
-			<h5><%=link_to pp.title, pp %></h5>
-			<%= link_to 'Back This Project', new_project_pledge_path(pp) %>
-		</li>
+
+		<%= render 'project', project: pp %>
+
 	<% end %>
+
+<%= paginate @projects %>

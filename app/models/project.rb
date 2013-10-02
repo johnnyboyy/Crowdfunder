@@ -4,6 +4,9 @@ class Project < ActiveRecord::Base
   has_many :pledges
   has_many :users, through: :pledges
 
+  
+  paginates_per 8
+
   validates :title, presence: true, length: {maximum: 100}
   validates :teaser, presence: true, length: {maximum: 255}
   validates :description, presence: true

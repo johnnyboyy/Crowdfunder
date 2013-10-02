@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   					 :password_confirmation
 
 
+
   has_many :projects
   has_many :pledges
 

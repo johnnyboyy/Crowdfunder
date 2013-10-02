@@ -1,10 +1,9 @@
 class ProjectsController < ApplicationController
 
 	def index
-		@projects = Project.all
-
-	end
-
+    @projects = Project.order('projects.created_at DESC').page(params[:page])
+  end
+  
 	def show
 		@project = Project.find(params[:id])
 	end
