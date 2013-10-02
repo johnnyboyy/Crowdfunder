@@ -2,10 +2,15 @@ Crowdfunder::Application.routes.draw do
 
   get "welcome/index"
 
-  resources :projects, only: [:index, :show] do
+  resources :projects, only: [:index, :show, :create] do
     resources :pledges, only: [:new, :create]
   end
   resources :users, only: [:show, :new, :create, :destroy]
+
+  namespace :my do 
+    resources :projects # => My::ProjectsController
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :pledges, only: [:destroy]
   root to: 'welcome#index'

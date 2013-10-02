@@ -4,16 +4,24 @@
       <a class="brand" href="#">CrowdFunder</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="<%= 'active' if current_page? root_path %>">
+          <li class="<%= 'active' if @nav == :home %>">
             <%= link_to 'Home', :root %>
           </li>
-          <li class="<%= 'active' if controller_name == "projects" %>">
+          <li class="<%= 'active' if @nav == :projects %>">
             <%= link_to 'Projects', :projects %>
           </li>
+          <% if logged_in? %>
+            <li class="divider-vertical"></li>
+            <li class="<%= 'active' if @nav == :my_projects %>">
+              <%= link_to 'My Projects', [:my, :projects] %>
+            <li>
+          <% end %>
         </ul>
         <div class="pull-right">
           <% if logged_in? %>
+            <%= link_to 'New Project', [:new, :my, :project] %>
             <%= link_to 'Logout', session_path(current_user), method: :delete, class: 'btn' %>
+
           <% else %>
             <%= link_to 'Sign In', new_session_path %>
             <%= link_to 'Sign Up', [:new, :user], class: 'btn btn-primary' %>
